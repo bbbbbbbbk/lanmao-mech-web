@@ -7,7 +7,16 @@ import Vant from 'vant';
 import './css/common.css'
 import 'vant/lib/index.css';
 
+import './http/axios'
+import http from './http/http';
+import api from './http/api';
+
 Vue.use(Vant);
+
+// 对后端接口 进行全局注册
+Vue.prototype.$api = api;
+// 对请求方式 进行全局注册
+Vue.prototype.$http = http;
 Vue.config.productionTip = false
 
 new Vue({
